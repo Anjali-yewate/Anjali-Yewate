@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Demo3
+ {
+    public static void main(String[] args)
+   {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+
+        int l = (a % 2 == 0) ? a - 1 : a;
+        for (int i = 1; i <= l; i += 2) 
+        {
+            System.out.print(i + (i < l ? ", " : ""));
+        }
+    }
+}

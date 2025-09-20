@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+class Calculator 
+{
+    double x, y;
+    String z;
+
+    Calculator(double x, double y, String z)
+    {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public double calculation() 
+    {
+        switch (z.toLowerCase())
+      {
+            case "add": return x + y;
+            case "sub": return x - y;
+            case "mul": return x * y;
+            case "div": 
+                if (y != 0) return x / y;
+                else throw new ArithmeticException("Division by zero not allowed");
+            default: throw new IllegalArgumentException("Invalid operation");
+       }
+    }
+
+    public static void main(String[] args) 
+    { 
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first no: ");
+        double x = sc.nextDouble();
+        System.out.print("Enter second no: ");
+        double y = sc.nextDouble();
+        System.out.print("Enter operation (add/sub/mul/div): ");
+        String op = sc.next();
+
+        Calculator c = new Calculator(x, y, op);
+        System.out.println("Result: " + c.calculate());
+    }
+}
